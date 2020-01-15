@@ -1,0 +1,42 @@
+{
+  "name": "eds-roofing-bstrap2",
+  "version": "1.0.0",
+  "description": "Roofing website with React Bootstrap",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
+    "start:prod": "node server.js",
+    "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
+    "prod": "export NODE_ENV=\"production\" && nodemon server.js",
+    "client": "cd client && npm run start",
+    "seed": "node db/seeds.sql",
+    "install": "cd client && npm install",
+    "build": "cd client && npm run build",
+    "heroku-postbuild": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/edfeld/eds-roofing-bstrap2.git"
+  },
+  "keywords": [
+    "React",
+    "Bootstrap",
+    "Roofing"
+  ],
+  "author": "Ed Einfeld",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/edfeld/eds-roofing-bstrap2/issues"
+  },
+  "homepage": "https://github.com/edfeld/eds-roofing-bstrap2#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "http": "0.0.0",
+    "morgan": "^1.9.1",
+    "path": "^0.12.7"
+  }
+}

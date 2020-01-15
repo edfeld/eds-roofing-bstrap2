@@ -1,0 +1,63 @@
+/*  style.CSS */
+
+body {
+  font-family: "Helvetica Neue",Arial,sans-serif;
+}
+
+.navbar-brand {
+  margin-right: 50px !important;
+}
+
+.nav {
+  padding-left: 30px;
+}
+
+.sticky-header {
+  min-height: 120px;
+  background-color: rgb(0, 0, 0);
+  color: white;
+  font-size: 16px;
+  text-align: center;
+  opacity: .90;
+}
+
+.site-header {
+  position: relative;
+}
+
+.inner-site-header {
+  max-width: 982px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 30px;
+  padding-bottom: auto;
+}
+
+.logo-home {
+  padding: .5rem 1rem;
+}
+
+.nav-link {
+  font-family: "Helvetica Neue",Arial,sans-serif !important;
+  font-size: 1.15em;
+  margin-right: 11px;
+}
+
+.bg-black {
+  background-color: rgb(0, 0, 0) !important;
+  /* opacity: 0.95; */
+}
+
+.top-div {
+  /* margin-top: 120px; */
+}
+
+.dropdown-item.show {
+  color: white;
+}
+.dropdown-menu.show {
+  opacity: 1 !important;
+  /* background-color: black; */
+  
+}
+

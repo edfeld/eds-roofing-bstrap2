@@ -1,0 +1,36 @@
+
+.top-div {
+  text-align: center;
+}
+
+
+
+.home-outer {
+  width: 100%;
+  text-align: center;
+}
+
+.home-inner {
+  width: 980px;
+  display: inline-block;
+}
+
+.card-one {
+  margin-left: 20px;
+  width: 475px;
+  height: 277px;
+  display: inline-block;
+  overflow: hidden;
+  text-align: left;
+}
+.panel-img {
+  width: 475px;
+  height: 277px; 
+  display: inline-block;
+  overflow: hidden;
+}
+
+.our-services {
+  margin-top: 30px;
+  text-align: left;
+}
