@@ -6,7 +6,8 @@ const path = require('path');
 // const db = require("./models");  // [ERE] for MySQL
 const express = require('express');
 const bodyParser = require('body-parser');
-// const morgan = require('morgan');  // Morgan is HTTP request logger middleware for Node.js
+
+const morgan = require('morgan');  // Morgan is HTTP request logger middleware for Node.js
 // const session = require('express-session');
 // const passport = require('./passport');
 const app = express();
@@ -105,8 +106,8 @@ if (process.env.NODE_ENV === 'production') {
 
 /* Express app ROUTING */
 // app.use('/auth', require('./auth'))
-require('./routes/getRoutes')(app)
-require('./routes/postRoutes')(app)
+// require('./routes/getRoutes')(app)
+// require('./routes/postRoutes')(app)
 // require('./routes/put-routes')(app)
 // require('./routes/del-routes')(app)
 
@@ -123,7 +124,7 @@ const syncOptions = { force: false };
 
 // ==== Starting Server ======
 
-db.sequelize.sync(syncOptions).then(function() {
+// db.sequelize.sync(syncOptions).then(function() {
 	server.listen(PORT, () => {
 		console.log(`App listening on PORT: ${PORT}`);
 		// badgeChron.run();
@@ -131,9 +132,9 @@ db.sequelize.sync(syncOptions).then(function() {
 	// 	"==> 🌎  App Listening on port 3000. Visit http://localhost:3000/ in your browser.",
 	//   );
 	})
-}).catch(function (err) {
-    console.log(err, "Something went wrong with the Database Update!")
-});
+// }).catch(function (err) {
+//     console.log(err, "Something went wrong with the Database Update!")
+// });
 
 
 
