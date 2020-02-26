@@ -17,7 +17,7 @@ const PORT = process.env.PORT || 3001;
 const http = require('http');
 const server = http.createServer(app);
 
-
+// console.log("process vars: ", process.env);
 //cors unblocked
 // app.use(cors());
 
@@ -105,12 +105,14 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 /* Express app ROUTING */
+console.log("hitting routes");
 // app.use('/auth', require('./auth'))
 // require('./routes/getRoutes')(app)
+app.use('/', require('./routes/postRoutes'));
 // require('./routes/postRoutes')(app)
 // require('./routes/put-routes')(app)
 // require('./routes/del-routes')(app)
-
+console.log("getting to Error handling")
 // ====== Error handler ====
 app.use(function(err, req, res, next) {
 	console.log('====== ERROR =======')
@@ -118,7 +120,7 @@ app.use(function(err, req, res, next) {
 	res.status(500)
 })
 
-const syncOptions = { force: false };
+// const syncOptions = { force: false };
 
 
 
@@ -126,7 +128,7 @@ const syncOptions = { force: false };
 
 // db.sequelize.sync(syncOptions).then(function() {
 	server.listen(PORT, () => {
-		console.log(`App listening on PORT: ${PORT}`);
+		console.log(`==> 🌎 App listening on PORT: ${PORT}`);
 		// badgeChron.run();
 	//   console.log(
 	// 	"==> 🌎  App Listening on port 3000. Visit http://localhost:3000/ in your browser.",

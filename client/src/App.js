@@ -7,7 +7,7 @@ import NavBar from './Components/NavBar';
 
 function App() {
   return (
-    <container className="App">
+    <div className="App">
       <NavBar />
       <Route 
 					exact 
@@ -18,7 +18,7 @@ function App() {
 						</div>
 					}
 			/>
-    </container>
+    </div>
   );
 }
 

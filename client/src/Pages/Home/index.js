@@ -2,6 +2,7 @@
 import React, { Component } from 'react';
 import { CardDeck, Card, Form, Button } from 'react-bootstrap'
 import SlideshowFade from '../../Components/SlideShow/SlideShowFade';
+import axios from 'axios'
 import './style.css'
 
 class Home extends Component {
@@ -9,10 +10,12 @@ class Home extends Component {
     super()
     this.state = {
       email: '',
-      body: '',
+      content: '',
+      senderName: ''
     }
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.resetForm = this.resetForm.bind(this);
   }
 
   handleChange(event) {
@@ -21,8 +24,31 @@ class Home extends Component {
     })
     // console.log("HandleChange: ", this.state);
   }
-  handleSubmit(event) {
+   
+  handleSubmit(event){
+    console.log("HandleSubmit=====>: ", this.state)
     event.preventDefault();
+    // const name = document.getElementById('name').value;
+    // const email = document.getElementById('email').value;
+    // const message = document.getElementById('message').value;
+    axios
+      .post('/send', {
+            name: this.state.senderName,   
+            email: this.state.email,  
+            message: this.state.content
+        
+    }).then((response)=>{
+        if (response.data.msg === 'success'){
+            alert("Message Sent."); 
+            this.resetForm()
+        }else if(response.data.msg === 'fail'){
+            alert("Message failed to send.")
+        }
+    })
+  }
+
+  resetForm(){
+    document.getElementById('contact-form').reset();
   }
 
 // function Home() {
@@ -34,10 +60,10 @@ class Home extends Component {
       <div className="home-outer">
         <div className='home-inner'>
         
-          <div className="panel-img">
+          <div className="panel-img float-left">
             <img className='home-image' src="https://via.placeholder.com/475x277.png" alt='Our Team'/>
           </div>
-          <div className='card-one'>
+          <div className='card-one float-left'>
             <h2>About Us</h2>
             <p>Prow scuttle parrel provost Sail ho shrouds spirits boom mizzenmast yardarm. Pinnace holystone mizzenmast quarter crow's nest nipperkin grog yardarm hempen halter furl. Swab barque interloper chantey doubloon
             starboard grog black jack gangway rutters.
@@ -84,12 +110,16 @@ class Home extends Component {
               </Card.Footer> */}
             </Card>
           </CardDeck>
-          <Form>
+          <Form id="contact-form">
             <Form.Group controlId="exampleForm.ControlInput1">
               <Form.Label>Email address</Form.Label>
               <Form.Control name="email" type="email" value={this.state.email} onChange={this.handleChange} placeholder="name@example.com" />
             </Form.Group>
-            <Form.Group controlId="exampleForm.ControlSelect1">
+            <Form.Group controlId="exampleForm.ControlInput2">
+              <Form.Label>Sender Name</Form.Label>
+              <Form.Control name="senderName" type="text" value={this.state.senderName} onChange={this.handleChange} placeholder="Name" />
+            </Form.Group>
+            {/* <Form.Group controlId="exampleForm.ControlSelect1">
               <Form.Label>Example select</Form.Label>
               <Form.Control as="select">
                 <option>1</option>
@@ -98,8 +128,8 @@ class Home extends Component {
                 <option>4</option>
                 <option>5</option>
               </Form.Control>
-            </Form.Group>
-            <Form.Group controlId="exampleForm.ControlSelect2">
+            </Form.Group> */}
+            {/* <Form.Group controlId="exampleForm.ControlSelect2">
               <Form.Label>Example multiple select</Form.Label>
               <Form.Control as="select" multiple>
                 <option>1</option>
@@ -108,10 +138,10 @@ class Home extends Component {
                 <option>4</option>
                 <option>5</option>
               </Form.Control>
-            </Form.Group>
+            </Form.Group> */}
             <Form.Group controlId="exampleForm.ControlTextarea1">
-              <Form.Label>Example textarea</Form.Label>
-              <Form.Control name='body' value={this.state.body} onChange={this.handleChange} as="textarea" rows="3" />
+              <Form.Label>Message content</Form.Label>
+              <Form.Control name='content' value={this.state.content} onChange={this.handleChange} as="textarea" rows="3" />
             </Form.Group>
             <Button className="float-left" variant="primary" type="submit" onClick={this.handleSubmit}>
               Submit

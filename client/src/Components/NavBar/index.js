@@ -14,7 +14,7 @@ import NavDropdown from 'react-bootstrap/NavDropdown'
 
 function NavBar () {
   return (
-    <container>
+    <div>
     {/* Navigation bar */}
     <div className="sticky-header sticky-top">
       <div className="site-header">
@@ -49,7 +49,7 @@ function NavBar () {
       </div>
       </div>
       </div>
-  </container>
+  </div>
   )
 }
 

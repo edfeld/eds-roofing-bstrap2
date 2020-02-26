@@ -14,7 +14,7 @@ const fadeProperties = {
   infinite: true,
   indicators: true,
   onChange: (oldIndex, newIndex) => {
-    console.log(`fade transition from ${oldIndex} to ${newIndex}`);
+    // console.log(`fade transition from ${oldIndex} to ${newIndex}`);
   }
 }
  
