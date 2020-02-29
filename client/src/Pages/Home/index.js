@@ -1,6 +1,6 @@
 // Home Page
 import React, { Component } from 'react';
-import { CardDeck, Card, Form, Button } from 'react-bootstrap'
+import { CardColumns, Col, Card, Form, Button, Row } from 'react-bootstrap'
 import SlideshowFade from '../../Components/SlideShow/SlideShowFade';
 import axios from 'axios'
 import './style.css'
@@ -59,20 +59,23 @@ class Home extends Component {
       <SlideshowFade />
       <div className="home-outer">
         <div className='home-inner'>
-        
-          <div className="panel-img float-left">
+        <div className="row">
+          <div className="two-column panel-img float-left">
             <img className='home-image' src="https://via.placeholder.com/475x277.png" alt='Our Team'/>
-          </div>
-          <div className='card-one float-left'>
+            </div> {/* row */}
+          <div className='two-column card-one float-left'>
+          <div id="about-usdiv">
             <h2>About Us</h2>
-            <p>Prow scuttle parrel provost Sail ho shrouds spirits boom mizzenmast yardarm. Pinnace holystone mizzenmast quarter crow's nest nipperkin grog yardarm hempen halter furl. Swab barque interloper chantey doubloon
-            starboard grog black jack gangway rutters.
-            Deadlights jack lad schooner scallywag dance the hempen jig carouser broadside cable strike colors. Bring a
-            spring upon her cable holystone blow the man down spanker Shiver me timbers to go on account lookout wherry
-            doubloon chase. </p>
-          </div>
+              <p id='about-us'>Prow scuttle parrel provost Sail ho shrouds spirits boom mizzenmast yardarm. Pinnace holystone mizzenmast quarter crow's nest nipperkin grog yardarm hempen halter furl. Swab barque interloper chantey doubloon
+              starboard grog black jack gangway rutters.
+              Deadlights jack lad schooner scallywag dance the hempen jig carouser broadside cable strike colors. Bring a
+              spring upon her cable holystone blow the man down spanker Shiver me timbers to go on account lookout wherry
+              doubloon chase. </p>
+            </div> {/*  */}
+        </div>
+        </div>
           <h2 className="our-services">Our services</h2>
-          <CardDeck>
+          {/* <CardDeck>
             <Card>
               <Card.Img variant="top" src="https://via.placeholder.com/100.png?text=267X160" />
               <Card.Body>
@@ -81,9 +84,7 @@ class Home extends Component {
                 Deadlights jack lad schooner scallywag dance the hempen jig carouser broadside cable strike colors. Bring a spring upon her cable holystone blow the man down spanker Shiver me timbers to go on account lookout wherry doubloon chase.
                 </Card.Text>
               </Card.Body>
-              {/* <Card.Footer>
-                <small className="text-muted">Last updated 3 mins ago</small>
-              </Card.Footer> */}
+              
             </Card>
             <Card>
               <Card.Img variant="top" src="https://via.placeholder.com/100.png?text=267X160" />
@@ -93,9 +94,7 @@ class Home extends Component {
                   Deadlights jack lad schooner scallywag dance the hempen jig carouser broadside cable strike colors. Bring a spring upon her cable holystone blow the man down spanker Shiver me timbers to go on account lookout wherry doubloon chase.{' '}
                 </Card.Text>
               </Card.Body>
-              {/* <Card.Footer>
-                <small className="text-muted">Last updated 3 mins ago</small>
-              </Card.Footer> */}
+              
             </Card>
             <Card>
               <Card.Img variant="top" src="https://via.placeholder.com/100.png?text=267X160" />
@@ -105,11 +104,53 @@ class Home extends Component {
                 Deadlights jack lad schooner scallywag dance the hempen jig carouser broadside cable strike colors. Bring a spring upon her cable holystone blow the man down spanker Shiver me timbers to go on account lookout wherry doubloon chase.
                 </Card.Text>
               </Card.Body>
-              {/* <Card.Footer>
-                <small className="text-muted">Last updated 3 mins ago</small>
-              </Card.Footer> */}
+             
             </Card>
-          </CardDeck>
+          </CardDeck> */}
+          {/* <h1>Card Columns</h1> */}
+          <div id="our-services">
+          <Row>
+          {/* <CardColumns> */}
+          <Col className="" xs={12} sm={12} md={4} lg={4} xl={4}>
+            <Card>
+              <Card.Img variant="top" src="https://via.placeholder.com/100.png?text=267X160" />
+              <Card.Body>
+                <Card.Title>Commercial & Industrial Roofing</Card.Title>
+                <Card.Text>
+                  This is a longer card with supporting text below as a natural lead-in to
+                  additional content. This content is a little bit longer.
+                </Card.Text>
+              </Card.Body>
+            </Card>
+          </Col>
+          <Col className="" xs={12} sm={12} md={4} lg={4} xl={4}>
+            <Card>
+              <Card.Img className="p-2" variant="top" src="https://via.placeholder.com/100.png?text=267X160" />
+              <Card.Body>
+                <Card.Title>Card title that wraps to a new line</Card.Title>
+                <Card.Text>
+                  This is a longer card with supporting text below as a natural lead-in to
+                  additional content. This content is a little bit longer.
+                </Card.Text>
+              </Card.Body>
+            </Card>
+          </Col>
+          <Col className="" xs={12} sm={12} md={4} lg={4} xl={4}>
+            <Card>
+              <Card.Img className="p-2" variant="top" src="https://via.placeholder.com/100.png?text=267X160" />
+              <Card.Body>
+                <Card.Title>Card title that wraps to a new line</Card.Title>
+                <Card.Text>
+                  This is a longer card with supporting text below as a natural lead-in to
+                  additional content. This content is a little bit longer.
+                </Card.Text>
+              </Card.Body>
+            </Card>  
+          </Col>
+          {/* </CardColumns> */}
+          </Row>
+          </div> {/* row */}
+          <h1>Contact Us</h1>
           <Form id="contact-form">
             <Form.Group controlId="exampleForm.ControlInput1">
               <Form.Label>Email address</Form.Label>
