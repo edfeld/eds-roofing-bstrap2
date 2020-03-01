@@ -1,6 +1,6 @@
 // Home Page
 import React, { Component } from 'react';
-import { CardColumns, Col, Card, Form, Button, Row } from 'react-bootstrap'
+import { Col, Card, Form, Button, Row } from 'react-bootstrap'
 import SlideshowFade from '../../Components/SlideShow/SlideShowFade';
 import axios from 'axios'
 import './style.css'
@@ -58,9 +58,9 @@ class Home extends Component {
     <div className='top-div'>
       <SlideshowFade />
       <div className="home-outer">
-        <div className='home-inner'>
-        <div className="row">
-          <div className="two-column panel-img float-left">
+        <div className="home-inner">
+        <Row>
+          <div className="ml-3 two-column panel-img float-left">
             <img className='home-image' src="https://via.placeholder.com/475x277.png" alt='Our Team'/>
             </div> {/* row */}
           <div className='two-column card-one float-left'>
@@ -72,9 +72,9 @@ class Home extends Component {
               spring upon her cable holystone blow the man down spanker Shiver me timbers to go on account lookout wherry
               doubloon chase. </p>
             </div> {/*  */}
-        </div>
-        </div>
-          <h2 className="our-services">Our services</h2>
+          </div>
+        </Row>
+          <h1 className="our-services">Our services</h1>
           {/* <CardDeck>
             <Card>
               <Card.Img variant="top" src="https://via.placeholder.com/100.png?text=267X160" />
@@ -109,11 +109,11 @@ class Home extends Component {
           </CardDeck> */}
           {/* <h1>Card Columns</h1> */}
           <div id="our-services">
-          <Row>
+          <Row className="home-row-2">
           {/* <CardColumns> */}
           <Col className="" xs={12} sm={12} md={4} lg={4} xl={4}>
             <Card>
-              <Card.Img variant="top" src="https://via.placeholder.com/100.png?text=267X160" />
+              <Card.Img className="p-4" variant="top" src="https://via.placeholder.com/100.png?text=267X160" />
               <Card.Body>
                 <Card.Title>Commercial & Industrial Roofing</Card.Title>
                 <Card.Text>
@@ -125,7 +125,7 @@ class Home extends Component {
           </Col>
           <Col className="" xs={12} sm={12} md={4} lg={4} xl={4}>
             <Card>
-              <Card.Img className="p-2" variant="top" src="https://via.placeholder.com/100.png?text=267X160" />
+              <Card.Img className="p-4" style={{width:"267",height:"160"}} variant="top" src="https://via.placeholder.com/100.png?text=267X160" />
               <Card.Body>
                 <Card.Title>Card title that wraps to a new line</Card.Title>
                 <Card.Text>
@@ -137,7 +137,7 @@ class Home extends Component {
           </Col>
           <Col className="" xs={12} sm={12} md={4} lg={4} xl={4}>
             <Card>
-              <Card.Img className="p-2" variant="top" src="https://via.placeholder.com/100.png?text=267X160" />
+              <Card.Img className="p-4" variant="top" src="https://via.placeholder.com/100.png?text=267X160" />
               <Card.Body>
                 <Card.Title>Card title that wraps to a new line</Card.Title>
                 <Card.Text>
@@ -150,7 +150,7 @@ class Home extends Component {
           {/* </CardColumns> */}
           </Row>
           </div> {/* row */}
-          <h1>Contact Us</h1>
+          <h1 className="contact-us-h1">Contact Us</h1>
           <Form id="contact-form">
             <Form.Group controlId="exampleForm.ControlInput1">
               <Form.Label>Email address</Form.Label>

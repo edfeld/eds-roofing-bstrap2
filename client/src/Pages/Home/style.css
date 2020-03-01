@@ -4,8 +4,8 @@
 }
 
 .home-outer {
-  width: 100%;
-  text-align: center;
+  /* width: 100%;
+  text-align: center; */
 }
 
 .home-inner {
@@ -67,14 +67,27 @@
     width: 100%!important;
   }
 
-  .card {
+  .home-row-2 .card {
     width:100%!important;
+  }
+
+  .card-img-top {
+    flex-shrink: none;
   }
 }
 
 @media (max-width: 767px) {
-  .card-columns .card {
-      display: inline-block;
+  .our-services {
+    text-align: center;
+  }
+  .home-row-2 .card {
+      display: inline-block!important;
       width: 100%;
+  }
+
+  .card-img-top {
+    width: 257px!important;
+    height: 257px;
+    display: inline-block;
   }
 }

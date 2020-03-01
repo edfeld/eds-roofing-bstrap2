@@ -12,6 +12,11 @@ body {
   padding-left: 30px;
 }
 
+/* added this in to make header fixed */
+.sticky-top {
+  position: fixed;
+}
+
 .sticky-header {
   min-height: 120px;
   background-color: rgb(0, 0, 0);
@@ -19,6 +24,8 @@ body {
   font-size: 16px;
   text-align: center;
   opacity: .90;
+  width: 100%;
+
 }
 
 .site-header {
@@ -48,8 +55,9 @@ body {
   /* opacity: 0.95; */
 }
 
+/* this is needed to make rotator show below the fixed header */
 .top-div {
-  /* margin-top: 120px; */
+  margin-top: 120px;
 }
 
 .dropdown-item.show {

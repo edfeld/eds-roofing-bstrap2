@@ -2,6 +2,7 @@ import React from 'react';
 import { Route } from 'react-router-dom';
 import Home from './Pages/Home';
 import './App.css';
+import Footer from './Components/Footer';
 
 import NavBar from './Components/NavBar';
 
@@ -18,6 +19,7 @@ function App() {
 						</div>
 					}
 			/>
+      <Footer />
     </div>
   );
 }
