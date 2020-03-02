@@ -113,7 +113,7 @@ class Home extends Component {
           {/* <CardColumns> */}
           <Col className="" xs={12} sm={12} md={4} lg={4} xl={4}>
             <Card>
-              <Card.Img className="p-4" variant="top" src="https://via.placeholder.com/100.png?text=267X160" />
+              <Card.Img className="p-4" variant="top" src="./images/Roof-Replacement.Repair.jpg" />
               <Card.Body>
                 <Card.Title>Commercial & Industrial Roofing</Card.Title>
                 <Card.Text>

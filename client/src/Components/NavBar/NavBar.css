@@ -14,7 +14,7 @@ body {
 
 /* added this in to make header fixed */
 .sticky-top {
-  position: fixed;
+  position: fixed!important;
 }
 
 .sticky-header {
